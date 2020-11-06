@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="view_form_alumno" model="ir.ui.view">
+            <field name="name">Alumno</field>
+            <field name="model">asw.alumno</field>
+            <field name="arch" type="xml">
+                <form string='Datos del alumno'>
+                    <header></header>
+                    <sheet>
+                        <group>
+                            <field name="alu_nombre" />
+                            <field name="alu_dni" />
+                            <field name="alu_legajo" />
+                            <field name="sequence" />
+                            <field name="active" />
+                            <field name="anio_cursado_id" />
+                            <field name="localidad_id" />
+                            <field name="reportes_diarios_ids" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_alumno" model="ir.ui.view">
+            <field name="name">Alumno</field>
+            <field name="model">asw.alumno</field>
+            <field name="arch" type="xml">
+                <tree string='Alumnos' sample='1'>
+                    <field name="alu_nombre" />
+                    <field name="alu_dni" />
+                    <field name="alu_legajo" />
+                    <field name="sequence" />
+                    <field name="active" />
+                    <field name="anio_cursado_id" />
+                    <field name="localidad_id" />
+                    <field name="reportes_diarios_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_alumno" model="ir.ui.view">
+            <field name="name">Alumno</field>
+            <field name="model">asw.alumno</field>
+            <field name="arch" type="xml">
+                <search string='Busqueda de Alumnos'>
+                    <field name="alu_nombre" />
+                    <field name="alu_dni" />
+                    <field name="alu_legajo" />
+                    <field name="active" />
+                    <filter string="Dado de baja" name="Dado de baja" domain="[('active', '=', False)]"/>
+                    <filter string="Sin nombre" name="Sin Nombre" domain="[('alu_nombre', '=', 0)]"/>
+                    <filter string="Sin DNI" name="Sin Dni" domain="[('alu_dni', '=', 0)]"/>
+                    <filter string="Sin Legajo" name="Sin Legajo" domain="[('alu_legajo', '=', 0)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_alumno_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Alumno</field>
+            <field name="res_model">asw.alumno</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Cree la primer planilla de importación</p>
+            </field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

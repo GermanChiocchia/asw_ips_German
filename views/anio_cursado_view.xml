@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="view_form_anio_cursado" model="ir.ui.view">
+            <field name="name">Año cursado</field>
+            <field name="model">asw.anio_cursado</field>
+            <field name="arch" type="xml">
+                <form string='Datos del año cursado'>
+                    <header></header>
+                    <sheet>
+                        <group>
+                            <field name="ani_periodo" />
+                            <field name="ani_adeuda_materias"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_anio_cursado" model="ir.ui.view">
+            <field name="name">Año cursado</field>
+            <field name="model">asw.anio_cursado</field>
+            <field name="arch" type="xml">
+                <tree string='Años cursados' sample='1'>
+                    <field name="ani_periodo" />
+                    <field name="ani_adeuda_materias"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_anio_cursado" model="ir.ui.view">
+            <field name="name">Año cursado</field>
+            <field name="model">asw.anio_cursado</field>
+            <field name="arch" type="xml">
+                <search string='Busqueda Por año cursado'>
+                    <field name="ani_periodo" />
+                    <field name="ani_adeuda_materias" />
+                    <filter string="No cursado" name="No cursado" domain="[('ani_periodo', '=', None)]"/>
+                    <filter string="Debe materias?" name="Adeuda materias?" domain="[('ani_adeuda_materias', '=', True)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_anio_cursado_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Año cursado</field>
+            <field name="res_model">asw.anio_cursado</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Ingrese un periodo anual :)</p>
+            </field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

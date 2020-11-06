@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <menuitem id='menu_root_ips' name='IPS' action='action_alumno_act_window' />
+
+        <menuitem id='menu_ips_datos' name='Datos' action='action_alumno_act_window' parent='menu_root_ips' />
+        <menuitem id='menu_ips_configuracion' name='Configuración' action='action_alumno_act_window' parent='menu_root_ips'/>
+
+        <menuitem id='menu_alumno' name='Alumnos' action='action_alumno_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_reporte' name='Reportes' action='action_reporte_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_empresa' name='Empresas' action='action_empresa_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_curso' name='Cursos' action='action_curso_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_anio_cursado' name='Años cursados' action='action_anio_cursado_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_supervisor' name='Supervisores' action='action_supervisor_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_contrato' name='Contratos' action='action_contrato_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_localidad' name='Localidades' action='action_localidad_act_window' parent='menu_ips_datos'/>
+        <menuitem id='menu_provincia' name='Provincias' action='action_provincia_act_window' parent='menu_ips_datos'/>
+    </data>
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="view_form_provincia" model="ir.ui.view">
+            <field name="name">Provincia</field>
+            <field name="model">asw.provincia</field>
+            <field name="arch" type="xml">
+                <form string='Datos de la provincia'>
+                    <header></header>
+                    <sheet>
+                        <group>
+                            <field name="pro_nombre" />
+                            <field name="pro_codigo"/>
+                            <field name="localidades_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_provincia" model="ir.ui.view">
+            <field name="name">Provincia</field>
+            <field name="model">asw.provincia</field>
+            <field name="arch" type="xml">
+                <tree string='Provincias' sample='1'>
+                    <field name="pro_nombre" />
+                    <field name="pro_codigo"/>
+                    <field name="localidades_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_provincia" model="ir.ui.view">
+            <field name="name">Provincia</field>
+            <field name="model">asw.provincia</field>
+            <field name="arch" type="xml">
+                <search string='Busqueda de Provincias'>
+                    <field name="pro_nombre" />
+                    <field name="pro_codigo" />
+                    <filter string="Provincia sin nombre" name="Provincia sin nombrar" domain="[('pro_nombre', '=', 0)]"/>
+                    <filter string="Sin codigo provincia" name="Sin codificar" domain="[('pro_codigo', '=', 0)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_provincia_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">provincia</field>
+            <field name="res_model">asw.provincia</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Ingrese una provincia:</p>
+            </field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

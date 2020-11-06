@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <record id="view_form_supervisor" model="ir.ui.view">
+            <field name="name">Supervisor</field>
+            <field name="model">asw.supervisor</field>
+            <field name="arch" type="xml">
+                <form string='Datos del supervisor'>
+                    <header></header>
+                    <sheet>
+                        <group>
+                            <field name="sup_nombre" />
+                            <field name="sup_dni"/>
+                            <field name="cur_sup_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_supervisor" model="ir.ui.view">
+            <field name="name">Supervisor</field>
+            <field name="model">asw.supervisor</field>
+            <field name="arch" type="xml">
+                <tree string='Supervisor' sample='1'>
+                    <field name="sup_nombre" />
+                    <field name="sup_dni"/>
+                    <field name="cur_sup_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_search_supervisor" model="ir.ui.view">
+            <field name="name">Supervisor</field>
+            <field name="model">asw.supervisor</field>
+            <field name="arch" type="xml">
+                <search string='Busqueda por Supervisor'>
+                    <field name="sup_nombre" />
+                    <field name="sup_dni" />
+                    <filter string="Sin nombre" name="Sin nombre" domain="[('sup_nombre', '=', 0)]"/>
+                    <filter string="Sin DNI" name="Sin D.N.I." domain="[('sup_dni', '=', 0)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_supervisor_act_window" model="ir.actions.act_window">
+            <field name="type">ir.actions.act_window</field>
+            <field name="name">Supervisor</field>
+            <field name="res_model">asw.supervisor</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Ingrese un supervisor por favor.</p>
+            </field>
+            <field name="target">current</field>
+        </record>
+    </data>
+</odoo>

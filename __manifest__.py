@@ -1,0 +1,20 @@
+{
+    'name': 'IPS',
+    'description': 'Gestor de practicas profesionalizantes',
+    'author': 'Adrian Borella',
+    'depends':['base'],
+    'data' : [
+        'views/alumno_view.xml',
+        'views/reporte_view.xml',
+        'views/empresa_view.xml',
+        'views/curso_view.xml',
+        'views/anio_cursado_view.xml',
+        'views/supervisor_view.xml',
+        'views/contrato_view.xml',
+        'views/localidad_view.xml',
+        'views/provincia_view.xml',
+        'views/ips_menu.xml',
+        'security/ir.model.access.csv',
+    ],
+    'application': True,
+}
