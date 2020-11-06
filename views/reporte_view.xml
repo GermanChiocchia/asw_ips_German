@@ -47,6 +47,7 @@
                     <field name="rep_fecha" />
                     <field name="rep_hs_trabajadas" />
                     <field name="rep_actividad" />
+                    <field name="alumno_id"/>
                     <filter string="Sin Fecha" name="Sin Fecha" domain="[('rep_fecha', '=', None)]"/>
                     <filter string="Sin Horas" name="Sin Horas" domain="[('rep_hs_trabajadas', '=', 0)]"/>
                     <filter string="Sin Actividad" name="Sin Actividad" domain="[('rep_actividad', '=', None)]"/>
