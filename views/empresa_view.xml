@@ -55,6 +55,7 @@
                     <field name="emp_nombre" />
                     <field name="emp_cuit" />
                     <field name="emp_nombre_contacto" />
+                    <field name="localidad_id" />
                     <filter string="Sin nombre" name="Sin Nombre" domain="[('emp_nombre', '=', 0)]"/>
                     <filter string="Sin cuit" name="Sin CUIT" domain="[('emp_cuit', '=', 0)]"/>
                     <filter string="Sin nombre contacto" name="Sin Nombre contacto" domain="[('emp_nombre_contacto', '=', 0)]"/>

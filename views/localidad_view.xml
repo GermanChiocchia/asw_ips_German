@@ -15,6 +15,13 @@
                             name="%(action_alumno_act_window)d"
                             context="{'search_default_localidad_id': active_id }"
                         />
+                        <button 
+                            type="action"
+                            id="btn_empresa"
+                            string="Ver empresas"
+                            name="%(action_empresa_act_window)d"
+                            context="{'search_default_localidad_id': active_id }"
+                        />
                     </header>
                     <sheet>
                         <group>

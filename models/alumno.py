@@ -47,6 +47,14 @@ class asw_alumno(models.Model):
         inverse_name='alumno_id',
     )
 
+    curso_id = fields.Many2one(
+        string=u'Curso',
+        comodel_name='asw.curso',
+        ondelete='set null',
+        _rec_name='name_get()',
+    )
+
+
     @api.depends('alu_nombre')
     def name_get(self):
         result = []

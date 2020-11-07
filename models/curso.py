@@ -22,3 +22,11 @@ class asw_curso(models.Model):
         column2='sup_nombre',
         string=u'Supervisores por curso',
     )
+
+    @api.depends('cur_nombre')
+    def name_get(self):
+        result = []
+        for record in self:            
+            name = record.cur_nombre
+            result.append((record.id, name))
+        return result

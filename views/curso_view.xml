@@ -7,7 +7,15 @@
             <field name="model">asw.curso</field>
             <field name="arch" type="xml">
                 <form string='Datos del curso'>
-                    <header></header>
+                    <header>
+                        <button 
+                            type="action"
+                            id="btn_alumno"
+                            string="Ver alumnos"
+                            name="%(action_alumno_act_window)d"
+                            context="{'search_default_curso_id': active_id }"
+                        />
+                    </header>
                     <sheet>
                         <group>
                             <field name="cur_nombre" />
