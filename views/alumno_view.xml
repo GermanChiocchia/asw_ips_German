@@ -7,7 +7,14 @@
             <field name="model">asw.alumno</field>
             <field name="arch" type="xml">
                 <form string='Datos del alumno'>
-                    <header></header>
+                    <header>
+                        <button
+                            type="action"
+                            id="btn_reporte_diario"
+                            string="Ver reportes diarios"
+                            name="%(action_reporte_act_window)d"
+                            context="{'search_default_alumno_id': active_id }"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="alu_nombre" />
