@@ -7,7 +7,15 @@
             <field name="model">asw.anio_cursado</field>
             <field name="arch" type="xml">
                 <form string='Datos del año cursado'>
-                    <header></header>
+                    <header>
+                        <button
+                            type="action"
+                            id="btn_alumno"
+                            string="Ver alumnos"
+                            name="%(action_alumno_act_window)d"
+                            context="{'search_default_anio_cursado_id': active_id }"
+                        />
+                    </header>
                     <sheet>
                         <group>
                             <field name="ani_periodo" />

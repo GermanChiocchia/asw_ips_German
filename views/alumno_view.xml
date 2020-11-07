@@ -60,6 +60,7 @@
                     <field name="active" />
                     <field name="localidad_id" />
                     <field name="curso_id" />
+                    <field name="anio_cursado_id" />
                     <filter string="Dado de baja" name="Dado de baja" domain="[('active', '=', False)]"/>
                     <filter string="Sin nombre" name="Sin Nombre" domain="[('alu_nombre', '=', 0)]"/>
                     <filter string="Sin DNI" name="Sin Dni" domain="[('alu_dni', '=', 0)]"/>
