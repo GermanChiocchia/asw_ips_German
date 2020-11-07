@@ -40,6 +40,7 @@
                 <search string='Busqueda de Contratos'>
                     <field name="con_fecha" />
                     <field name="con_activo" />
+                    <field name="empresa_id"/>
                     <filter string="Contrato activo?" name="Contrato activo?" domain="[('con_activo', '=', True)]"/>
                     <filter string="Sin fecha" name="Sin fecha" domain="[('con_fecha', '=', 0)]"/>
                 </search>

@@ -7,7 +7,15 @@
             <field name="model">asw.localidad</field>
             <field name="arch" type="xml">
                 <form string='Datos de la localidad'>
-                    <header></header>
+                    <header>
+                        <button 
+                            type="action"
+                            id="btn_alumno"
+                            string="Ver alumnos"
+                            name="%(action_alumno_act_window)d"
+                            context="{'search_default_localidad_id': active_id }"
+                        />
+                    </header>
                     <sheet>
                         <group>
                             <field name="loc_nombre" />
@@ -38,6 +46,7 @@
                 <search string='Busqueda de Localidades'>
                     <field name="loc_nombre" />
                     <field name="loc_codigo" />
+                    <field name="provincia_id"/>
                     <filter string="Localidad sin nombre" name="Localidad sin nombrar" domain="[('loc_nombre', '=', None)]"/>
                     <filter string="Sin codigo postal" name="Sin codificar" domain="[('loc_codigo', '=', 0)]"/>
                 </search>

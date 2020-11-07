@@ -13,7 +13,8 @@
                             id="btn_reporte_diario"
                             string="Ver reportes diarios"
                             name="%(action_reporte_act_window)d"
-                            context="{'search_default_alumno_id': active_id }"/>
+                            context="{'search_default_alumno_id': active_id }"
+                        />
                     </header>
                     <sheet>
                         <group>
@@ -57,6 +58,7 @@
                     <field name="alu_dni" />
                     <field name="alu_legajo" />
                     <field name="active" />
+                    <field name="localidad_id" />
                     <filter string="Dado de baja" name="Dado de baja" domain="[('active', '=', False)]"/>
                     <filter string="Sin nombre" name="Sin Nombre" domain="[('alu_nombre', '=', 0)]"/>
                     <filter string="Sin DNI" name="Sin Dni" domain="[('alu_dni', '=', 0)]"/>

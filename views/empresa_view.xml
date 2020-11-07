@@ -7,7 +7,15 @@
             <field name="model">asw.empresa</field>
             <field name="arch" type="xml">
                 <form string='Datos de la empresa'>
-                    <header></header>
+                    <header>
+                        <button
+                            type="action"
+                            id="btn_contrato"
+                            string="Ver contratos"
+                            name="%(action_contrato_act_window)d"
+                            context="{'search_default_empresa_id': active_id }"
+                        />
+                    </header>
                     <sheet>
                         <group>
                             <field name="emp_nombre" />

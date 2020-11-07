@@ -7,7 +7,15 @@
             <field name="model">asw.provincia</field>
             <field name="arch" type="xml">
                 <form string='Datos de la provincia'>
-                    <header></header>
+                    <header>
+                        <button 
+                            type="action"
+                            id="btn_localidad"
+                            string="Ver contratos"
+                            name="%(action_localidad_act_window)d"
+                            context="{'search_default_localidad_id': active_id }"
+                        />
+                    </header>
                     <sheet>
                         <group>
                             <field name="pro_nombre" />
