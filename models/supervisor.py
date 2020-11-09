@@ -13,7 +13,6 @@ class asw_supervisor(models.Model):
         string=u'D.N.I.',
     )
 
-    #cur_sup_ids = fields.Many2many('asw.curso')
     cur_sup_ids = fields.Many2many(
         comodel_name='asw.curso',
         relation='curso_supervisor',
