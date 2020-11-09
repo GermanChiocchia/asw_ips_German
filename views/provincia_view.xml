@@ -11,9 +11,9 @@
                         <button 
                             type="action"
                             id="btn_localidad"
-                            string="Ver contratos"
+                            string="Ver localidades"
                             name="%(action_localidad_act_window)d"
-                            context="{'search_default_localidad_id': active_id }"
+                            context="{'search_default_provincia_id': active_id }"
                         />
                     </header>
                     <sheet>
