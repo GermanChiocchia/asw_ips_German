@@ -26,6 +26,9 @@
                             <field name="anio_cursado_id" />
                             <field name="localidad_id" />
                             <field name="reportes_diarios_ids" />
+                            <field name="alu_horas_trabajadas" />
+                            <field name="alu_porcentaje_hs_trabajadas" widget='progressbar'/>
+                            <field name="curso_id" />
                         </group>
                     </sheet>
                 </form>
@@ -45,6 +48,9 @@
                     <field name="anio_cursado_id" />
                     <field name="localidad_id" />
                     <field name="reportes_diarios_ids" />
+                    <field name="alu_horas_trabajadas" />
+                    <field name="alu_porcentaje_hs_trabajadas" widget='progressbar' />
+                    <field name="curso_id" />
                 </tree>
             </field>
         </record>

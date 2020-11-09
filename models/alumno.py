@@ -54,6 +54,28 @@ class asw_alumno(models.Model):
         _rec_name='name_get()',
     )
 
+    alu_horas_trabajadas = fields.Float(
+        string =u'Horas trabajadas',
+        compute = '_compute_alu_horas_trabajadas',
+    )
+
+    alu_porcentaje_hs_trabajadas = fields.Float(
+        string =u'% sobre 200 hs trabajadas',
+        compute = '_compute_porcentaje_hs_trabajadas',
+    )
+
+    @api.depends('reportes_diarios_ids')
+    def _compute_alu_horas_trabajadas(self):
+        for record in self:
+            arr_horas = record.reportes_diarios_ids.mapped('rep_hs_trabajadas')
+            suma_horas = sum(arr_horas)
+            record.alu_horas_trabajadas = suma_horas
+
+    @api.depends('alu_horas_trabajadas')
+    def _compute_porcentaje_hs_trabajadas(self):
+        for record in self:
+            record.alu_porcentaje_hs_trabajadas = record.alu_horas_trabajadas / 2
+
 
     @api.depends('alu_nombre')
     def name_get(self):

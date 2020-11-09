@@ -14,7 +14,6 @@ class asw_curso(models.Model):
         default=False
     )
 
-    #cur_sup_ids = fields.Many2many('asw.supervisor')
     cur_sup_ids = fields.Many2many(
         comodel_name='asw.supervisor',
         relation='curso_supervisor',
