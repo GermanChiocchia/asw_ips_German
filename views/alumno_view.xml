@@ -8,28 +8,52 @@
             <field name="arch" type="xml">
                 <form string='Datos del alumno'>
                     <header>
-                        <button
-                            type="action"
-                            id="btn_reporte_diario"
-                            string="Ver reportes diarios"
-                            name="%(action_reporte_act_window)d"
-                            context="{'search_default_alumno_id': active_id }"
-                        />
+                        
                     </header>
                     <sheet>
-                        <group>
-                            <field name="alu_nombre" />
-                            <field name="alu_dni" />
-                            <field name="alu_legajo" />
-                            <field name="sequence" />
-                            <field name="active" />
-                            <field name="anio_cursado_id" />
-                            <field name="localidad_id" />
-                            <field name="reportes_diarios_ids" />
-                            <field name="alu_horas_trabajadas" />
-                            <field name="alu_porcentaje_hs_trabajadas" widget='percentpie'/>
-                            <field name="curso_id" />
-                        </group>
+                        <div name="buttons" class="oe_right oe_button_box">
+                            <button
+                                type="action"
+                                id="btn_reporte_diario"
+                                string="Ver reportes diarios"
+                                name="%(action_reporte_act_window)d"
+                                context="{'search_default_alumno_id': active_id }"
+                            />
+                        </div>
+                        <div>
+                            <label for='alu_nombre' class='oe_edit_only' />
+                            <h1><field name="alu_nombre" /></h1>
+                        </div>
+                        <notebook>
+                            <page string='Datos' >
+                                <group col='4' string='Datos del alumno'>
+                                    <field name="alu_dni" />
+                                    <field name="alu_legajo" />
+                                    <field name="sequence" />
+                                    <newline />
+                                    <field name="active" />
+                                    <newline />
+                                    <separator string='Datos estadisticos' />
+                                    <newline />
+                                    <field name="anio_cursado_id" />
+                                    <field name="localidad_id" />
+                                    <field name="alu_horas_trabajadas" />
+                                    <field name="alu_porcentaje_hs_trabajadas" widget='percentpie'/>
+                                    <field name="curso_id" />
+                                </group>
+                            </page>
+                            <page string='Reportes diarios'>
+                                <field name="reportes_diarios_ids" nolabel='1'>
+                                    <tree string="Caption" create="1" delete="1" edit="1">
+                                        <field name="rep_fecha" />
+                                        <field name="rep_hora_ingreso" />
+                                        <field name="rep_hora_egreso" />
+                                        <field name="rep_actividad" />
+                                        <field name="rep_obstaculos" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
                     </sheet>
                 </form>
             </field>
