@@ -8,23 +8,35 @@
             <field name="arch" type="xml">
                 <form string='Datos de la empresa'>
                     <header>
-                        <button
-                            type="action"
-                            id="btn_contrato"
-                            string="Ver contratos"
-                            name="%(action_contrato_act_window)d"
-                            context="{'search_default_empresa_id': active_id }"
-                        />
                     </header>
                     <sheet>
-                        <group>
+                        <div name="buttons" class="oe_right oe_button_box">
+                            <button
+                                type="action"
+                                id="btn_contrato"
+                                string="Ver contratos"
+                                name="%(action_contrato_act_window)d"
+                                context="{'search_default_empresa_id': active_id }"
+                            />
+                        </div>
+                        <div>
+                            <label for='emp_nombre' class='oe_edit_only' />
+                            <h1><field name="emp_nombre" /></h1>
+                        </div>
+                        <group col='4' string='Datos de la empresa'>
                             <field name="emp_nombre" />
                             <field name="emp_cuit" />
+                                <newline />
+                            <separator string='Ubicacion y contacto' />
+                                <newline />
                             <field name="emp_direccion" />
                             <field name="emp_telefono" />
                             <field name="emp_nombre_contacto" />
+                                <newline />
+                            <separator string='Localidad y contratos' />
+                                <newline />
                             <field name="localidad_id" />
-                            <field name="contratos_ids" />
+                            <field name="contratos_ids" nolabel='1' />
                         </group>
                     </sheet>
                 </form>

@@ -8,26 +8,36 @@
             <field name="arch" type="xml">
                 <form string='Datos de la localidad'>
                     <header>
-                        <button 
+                    
+                    </header>
+                    <sheet>
+                        <div name="buttons" class="oe_right oe_button_box">
+                            <button 
                             type="action"
                             id="btn_alumno"
                             string="Ver alumnos"
                             name="%(action_alumno_act_window)d"
                             context="{'search_default_localidad_id': active_id }"
-                        />
-                        <button 
+                            />
+                            <button 
                             type="action"
                             id="btn_empresa"
                             string="Ver empresas"
                             name="%(action_empresa_act_window)d"
                             context="{'search_default_localidad_id': active_id }"
-                        />
-                    </header>
-                    <sheet>
-                        <group>
+                            />
+                        </div>
+                        <div>
+                            <label for='loc_nombre' class='oe_edit_only' />
+                            <h1><field name="loc_nombre" /></h1>
+                        </div>
+                        <group col='4' string='Datos de localidad'>
                             <field name="loc_nombre" />
                             <field name="loc_codigo"/>
-                            <field name="provincia_id"/>
+                                <newline />
+                            <separator string='Provincia que pertenece' />
+                                <newline />
+                            <field name="provincia_id" nolabel='1' />
                         </group>
                     </sheet>
                 </form>

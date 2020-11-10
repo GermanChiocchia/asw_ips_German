@@ -9,12 +9,22 @@
                 <form string='Datos del reporte diario'>
                     <header></header>
                     <sheet>
-                        <group>
+                        <div>
+                            <label for='rep_fecha' class='oe_edit_only' />
+                            <h1><field name="rep_fecha" /></h1>
+                        </div>
+                        <group col='4' string='Datos de reporte'>
                             <field name="rep_fecha" />
                             <field name="rep_hora_ingreso" />
                             <field name="rep_hora_egreso" />
+                                <newline />
+                            <separator string='Actividades y obstaculos' />
+                                <newline />
                             <field name="rep_actividad" />
                             <field name="rep_obstaculos" />
+                                <newline />
+                            <separator string='Horas del alumno' />
+                                <newline />
                             <field name="rep_hs_trabajadas" />
                             <field name="alumno_id" />
                         </group>

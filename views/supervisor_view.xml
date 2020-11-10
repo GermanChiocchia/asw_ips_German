@@ -9,10 +9,17 @@
                 <form string='Datos del supervisor'>
                     <header></header>
                     <sheet>
-                        <group>
+                        <div>
+                            <label for='sup_nombre' class='oe_edit_only' />
+                            <h1><field name="sup_nombre" /></h1>
+                        </div>
+                        <group col='4' string='Datos del supervisor'>
                             <field name="sup_nombre" />
                             <field name="sup_dni"/>
-                            <field name="cur_sup_ids"/>
+                                <newline />
+                            <separator string='Cursos en supervision' />
+                                <newline />
+                            <field name="cur_sup_ids" nolebel='1' />
                         </group>
                     </sheet>
                 </form>

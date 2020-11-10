@@ -30,11 +30,11 @@
                                     <field name="alu_dni" />
                                     <field name="alu_legajo" />
                                     <field name="sequence" />
-                                    <newline />
+                                        <newline />
                                     <field name="active" />
-                                    <newline />
+                                        <newline />
                                     <separator string='Datos estadisticos' />
-                                    <newline />
+                                        <newline />
                                     <field name="anio_cursado_id" />
                                     <field name="localidad_id" />
                                     <field name="alu_horas_trabajadas" />

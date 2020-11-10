@@ -9,9 +9,16 @@
                 <form string='Datos del contrato'>
                     <header></header>
                     <sheet>
-                        <group>
+                        <div>
+                            <label for='con_fecha' class='oe_edit_only' />
+                            <h1><field name="con_fecha" /></h1>
+                        </div>
+                        <group col='4' string='Datos del contrato'>
                             <field name="con_fecha" />
                             <field name="con_activo"/>
+                                <newline />
+                            <separator string='Empresas y alumnos a contrato' />
+                                <newline />
                             <field name="alumno_id"/>
                             <field name="empresa_id"/>
                         </group>

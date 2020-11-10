@@ -8,19 +8,28 @@
             <field name="arch" type="xml">
                 <form string='Datos del curso'>
                     <header>
-                        <button 
-                            type="action"
-                            id="btn_alumno"
-                            string="Ver alumnos"
-                            name="%(action_alumno_act_window)d"
-                            context="{'search_default_curso_id': active_id }"
-                        />
                     </header>
                     <sheet>
-                        <group>
+                        <div name="buttons" class="oe_right oe_button_box">
+                            <button 
+                                type="action"
+                                id="btn_alumno"
+                                string="Ver alumnos"
+                                name="%(action_alumno_act_window)d"
+                                context="{'search_default_curso_id': active_id }"
+                            />
+                        </div>
+                        <div>
+                            <label for='cur_nombre' class='oe_edit_only' />
+                            <h1><field name="cur_nombre" /></h1>
+                        </div>
+                        <group col='4' string='Datos del curso'>
                             <field name="cur_nombre" />
                             <field name="cur_completado"/>
-                            <field name="cur_sup_ids"/>
+                                <newline />
+                            <separator string="Supervisores del curso" />
+                                <newline />
+                            <field name="cur_sup_ids" nolabel='1'/>
                         </group>
                     </sheet>
                 </form>

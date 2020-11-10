@@ -7,17 +7,23 @@
             <field name="model">asw.anio_cursado</field>
             <field name="arch" type="xml">
                 <form string='Datos del año cursado'>
-                    <header>
-                        <button
-                            type="action"
-                            id="btn_alumno"
-                            string="Ver alumnos"
-                            name="%(action_alumno_act_window)d"
-                            context="{'search_default_anio_cursado_id': active_id }"
-                        />
+                    <header>   
                     </header>
                     <sheet>
-                        <group>
+                        <div name="buttons" class="oe_right oe_button_box">
+                            <button
+                                type="action"
+                                id="btn_alumno"
+                                string="Ver alumnos"
+                                name="%(action_alumno_act_window)d"
+                                context="{'search_default_anio_cursado_id': active_id }"
+                            />
+                        </div>
+                        <div>
+                            <label for='ani_periodo' class='oe_edit_only' />
+                            <h1><field name="ani_periodo" /></h1>
+                        </div>
+                        <group col='4' string='Datos del año cursado'>
                             <field name="ani_periodo" />
                             <field name="ani_adeuda_materias"/>
                         </group>
