@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 
 
 class asw_alumno(models.Model):
@@ -84,3 +84,37 @@ class asw_alumno(models.Model):
             name = record.alu_nombre
             result.append((record.id, name))
         return result
+    
+    @api.model
+    def create(self, values):
+        if ('alu_dni' in values and values['alu_dni'] != '' and values['alu_dni'] != '0'):
+            cnt = self.env['asw.alumno'].search_count([('alu_dni', '=', values['alu_dni'])])
+            if(cnt>0):
+                raise exceptions.Warning('''Ya existe un alumno cargado con el dni ingresado, 
+                por favor revise el numero de documento y vuelva a intentarlo''')
+        result = super(asw_alumno, self).create(values)
+        return result
+    
+    def write(self, values):
+        if ('alu_dni' in values and values['alu_dni'] != '' and values['alu_dni'] != '0'):
+            cnt = self.env['asw.alumno'].search_count([('alu_dni', '=', values['alu_dni']),('id', '!=', self.id)])
+            if(cnt > 0):
+                raise exceptions.Warning('''Ya existe un alumno cargado con el dni ingresado, 
+                por favor revise el numero de documento y vuelva a intentarlo''')
+        result = super(asw_alumno, self).write(values)
+        return result
+
+    @api.onchange('alu_dni')
+    def onchange_dni(self):
+        cnt = self.env['asw.alumno'].search_count([('alu_dni', '=', self.alu_dni)])
+        if(cnt > 0):
+            raise exceptions.Warning('''Ya existe un alumno cargado con el dni ingresado, 
+            por favor revise el numero de documento y vuelva a intentarlo''')
+    
+    def unlink(self):
+        for record in self:
+            cnt = self.env['asw.reporte_diario'].search_count([('alumno_id', '=', record.id)])
+            if(cnt!= 0):
+                raise exceptions.UserError('''No puede eliminarse el registro del alumno
+                %S ya que posee reportes diarios cargados''' % record.alu_nombre)
+            result = super(asw_alumno, record).unlink()

@@ -7,7 +7,8 @@
             <field name="model">asw.contrato</field>
             <field name="arch" type="xml">
                 <form string='Datos del contrato'>
-                    <header></header>
+                    <header>
+                    </header>
                     <sheet>
                         <div>
                             <label for='con_fecha' class='oe_edit_only' />
