@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from odoo import models, fields, api
+from odoo import models, fields, api, exceptions
 
 class asw_reporte_diario(models.Model):
     _name = 'asw.reporte_diario'
@@ -35,3 +35,24 @@ class asw_reporte_diario(models.Model):
         ondelete='set null',
         _rec_name='name_get()',
     )
+
+    @api.model
+    def create(self, values):
+        if (values['rep_hora_ingreso'] > values['rep_hora_egreso']):
+            raise exceptions.Warning('''La hora de egreso nunca puede ser menor a la de ingreso,
+            por favor corrijalo''')
+        result = super(asw_reporte_diario, self).create(values)
+        return result
+    
+    def write(self, values):
+        if (values['rep_hora_ingreso'] > values['rep_hora_egreso']):
+            raise exceptions.Warning('''La hora de egreso nunca puede ser menor a la de ingreso,
+            por favor corrijalo''')
+        result = super(asw_reporte_diario, self).create(values)
+        return result
+
+    @api.onchange('rep_hora_ingreso')
+    def onchange_rep(self):
+        if (self.rep_hora_ingreso > self.rep_hora_egreso):
+            raise exceptions.Warning('''La hora de egreso nunca puede ser menor a la de ingreso,
+                por favor corrijalo''')
