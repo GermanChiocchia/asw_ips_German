@@ -15,6 +15,8 @@
         'views/provincia_view.xml',
         'views/ips_menu.xml',
         'security/ir.model.access.csv',
+        'security/permisos.xml',
+        'security/reglas_acceso.xml',
     ],
     'application': True,
 }

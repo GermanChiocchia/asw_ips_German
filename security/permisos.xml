@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record model="ir.module.category" id="module_category_asw_ips_German">
+            <field name="name">IPS</field>
+            <field name="description">IPS German</field>
+        </record>
+
+        <record model="res.groups" id="module_group_alumno">
+            <field name="name">Alumno</field>
+            <field name="category_id" eval="ref('module_category_asw_ips_German')"/>
+        </record>
+
+        <record model="res.groups" id="module_group_supervisor">
+            <field name="name">Supervisor</field>
+            <field name="category_id" eval="ref('module_category_asw_ips_German')"/>
+        </record>
+
+        <record model="res.groups" id="module_group_empresa">
+            <field name="name">Empresa</field>
+            <field name="category_id" eval="ref('module_category_asw_ips_German')"/>
+        </record>
+
+        <record model="res.groups" id="module_group_provincia">
+            <field name="name">Provincia</field>
+            <field name="category_id" eval="ref('module_category_asw_ips_German')"/>
+        </record>
+
+        <record model="res.groups" id="module_group_anio_cursado">
+            <field name="name">Año cursado</field>
+            <field name="category_id" eval="ref('module_category_asw_ips_German')"/>
+        </record>
+    </data>
+</odoo>
