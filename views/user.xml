@@ -9,9 +9,11 @@
             <field name="arch" type="xml">
                 <notebook position="inside">
                     <page string="Datos IPS">
-                        <field name="usr_alumno"/>
-                        <field name="usr_supervisor"/>
-                        <field name="usr_empresa"/>
+                        <group>
+                            <field name="usr_alumno"/>
+                            <field name="usr_supervisor"/>
+                            <field name="usr_empresa"/>
+                        </group>
                     </page>
                 </notebook>
             </field>
