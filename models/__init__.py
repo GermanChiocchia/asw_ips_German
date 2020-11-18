@@ -7,3 +7,4 @@ from . import supervisor
 from . import contrato
 from . import localidad
 from . import provincia
+from . import user

@@ -14,6 +14,7 @@
         'views/localidad_view.xml',
         'views/provincia_view.xml',
         'views/ips_menu.xml',
+        'views/user.xml',
         'security/ir.model.access.csv',
         'security/permisos.xml',
         'security/reglas_acceso.xml',

@@ -8,3 +8,4 @@ access_asw_supervisor,asw_supervisor,model_asw_supervisor,,1,1,1,1
 access_asw_contrato,asw_contrato,model_asw_contrato,,1,1,1,1
 access_asw_localidad,asw_localidad,model_asw_localidad,,1,1,1,1
 access_asw_provincia,asw_provincia,model_asw_provincia,,1,1,1,1
+access_res_users,res_users,model_res_users,,1,1,1,1
