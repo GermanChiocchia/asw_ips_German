@@ -20,7 +20,7 @@ class asw_alumno(models.Model):
 
     active = fields.Boolean(
         string=u'Esta activo?',
-        deafult=True
+        default=True
     )
 
     sequence = fields.Integer(
